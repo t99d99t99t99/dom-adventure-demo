@@ -91,6 +91,26 @@ body {
     letter-spacing: .2em;
 }
 
+.ending-restart {
+    display: table;
+    margin: 28px auto 0;
+    padding: 11px 18px;
+    border: 2px solid #c7d2dc;
+    color: #e5edf4;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-decoration: none;
+    box-shadow: 3px 3px 0 #465563;
+}
+
+.ending-restart:hover,
+.ending-restart:focus-visible {
+    outline: none;
+    color: #10151b;
+    background: #e5edf4;
+}
+
 h1 {
     margin: 0;
     color: #eee;
