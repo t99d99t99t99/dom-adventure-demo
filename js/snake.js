@@ -195,13 +195,17 @@ function startWhiteNoise() {
     source.start();
 }
 
+function reportCorruption() {
+    window.location.href = new URL("./report.html", window.location.href).href;
+}
+
 function printGlitchToConsole() {
     if (Math.random() < 0.3) {
-        const reportUrl = new URL("./report.html", window.location.href).href;
-        
         console.error(
-            `%cDOM이 오염되었습니다.\n이 오류에 대해 더 자세히 알아보기: ${reportUrl}`,
-            "font-size: 18px; font-weight: bold; line-height: 1.6;"
+            "%cDOM이 오염되었습니다.\n계속하려면 콘솔에 %creportCorruption()%c을 입력하십시오.",
+            "font-size: 18px; font-weight: bold; line-height: 1.6;",
+            "padding: 2px 5px; background: #202c35; color: #8ff7ff; font-size: 20px; font-weight: bold;",
+            "font-size: 18px; font-weight: bold;"
         );
         return;
     }
@@ -259,7 +263,7 @@ function enterGlitchMode() {
     window.requestAnimationFrame(animatePixelNoise);
     startWhiteNoise();
     printGlitchToConsole();
-    window.setInterval(printGlitchToConsole, 400);
+    window.setInterval(printGlitchToConsole, 1000);
     if (noiseAudio && noiseAudio.state === "suspended") noiseAudio.resume();
 }
 
