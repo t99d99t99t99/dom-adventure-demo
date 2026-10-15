@@ -1,0 +1,116 @@
+/* 타이틀 화면과 게임 화면이 함께 사용하는 레트로 오락실 스타일입니다. */
+:root {
+    color-scheme: dark;
+    font-family: "Courier New", monospace;
+    background: #090d12;
+    color: #e5e5e5;
+    font-synthesis: none;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    min-width: 320px;
+    min-height: 100vh;
+    margin: 0;
+    display: grid;
+    place-items: center;
+    overflow-x: hidden;
+    background-color: #090d12;
+    background-image: linear-gradient(#111923 1px, transparent 1px), linear-gradient(90deg, #111923 1px, transparent 1px);
+    background-size: 24px 24px;
+}
+
+.title-card {
+    width: min(100% - 32px, 560px);
+    padding: 32px 28px;
+    border: 2px solid #777;
+    background: #101010;
+    box-shadow: 6px 6px 0 #333, 0 0 28px #ffffff20;
+    text-align: center;
+}
+
+h1 {
+    margin: 0;
+    color: #eee;
+    font-size: 20px;
+    font-weight: 700;
+    text-shadow: 2px 2px 0 #555;
+}
+
+.title-card h1 { margin-bottom: 22px; font-size: clamp(24px, 8vw, 34px); }
+.title-messages {
+    display: grid;
+    gap: 10px;
+    text-align: left;
+}
+.message-group {
+    padding: 12px 14px;
+    border: 1px solid #555;
+    background: #090909;
+}
+.system-note {
+    border: 2px solid #aaa;
+    border-left: 6px solid #eee;
+    background: #1b1b1b;
+    box-shadow: 3px 3px 0 #444;
+}
+.system-note .message-copy {
+    color: #eee;
+    font-size: 14px;
+    font-weight: 700;
+}
+.message-label {
+    margin: 0 0 8px;
+    color: #eee;
+    font-size: 11px;
+    letter-spacing: .14em;
+}
+.message-copy {
+    margin: 5px 0 0;
+    color: #bbb;
+    font-size: 13px;
+    line-height: 1.65;
+}
+.title-card .play-link {
+    display: inline-block;
+    margin-top: 22px;
+    padding: 12px 18px;
+    border: 2px solid #eee;
+    color: #eee;
+    font-weight: 700;
+    text-decoration: none;
+    text-transform: uppercase;
+    box-shadow: 3px 3px 0 #555;
+}
+.title-card .play-link:hover, .title-card .play-link:focus-visible {
+    color: #101010;
+    background: #eee;
+    outline: none;
+}
+
+@media (max-width: 420px) {
+    .title-card { padding: 26px 18px; }
+    .message-group { padding: 11px; }
+}
+
+/* 무작위로 색이 바뀌는 블록을 전체 화면 글리치 레이어로 사용합니다. */
+.glitch-screen { isolation: isolate; }
+
+#glitch-noise {
+    position: fixed;
+    z-index: 10;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    opacity: .58;
+    pointer-events: none;
+    image-rendering: pixelated;
+}
+
+.glitch-screen .title-card {
+    border-color: #62efff;
+    box-shadow: 6px 6px 0 #ff3cb8, 0 0 32px #00e5ff50;
+}
+
+.glitch-screen h1 { color: #ff73c8; text-shadow: 2px 2px #00e5ff; }

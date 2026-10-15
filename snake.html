@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#111">
+    <title>Snake</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/snake.css">
+    <script src="js/snake.js" defer></script>
+</head>
+<body>
+    <main class="game" aria-labelledby="game-title">
+        <header class="game-header">
+            <h1 id="game-title">S N A K E</h1>
+            <p class="score-line">SCORE <span id="score">0</span></p>
+        </header>
+
+        <div class="board-frame" id="board-frame">
+            <canvas id="game-board" width="400" height="400" aria-label="Snake 게임 보드"></canvas>
+        </div>
+
+        <p class="help" id="game-help">방향키 또는 WASD로 이동 · 먹이를 먹고 오래 버티세요</p>
+        <p class="error-message" id="error-message" role="alert" hidden>오류가 발생했습니다. F12를 눌러 자세한 정보를 확인하십시오</p>
+        <p class="game-over" id="game-over" hidden>GAME OVER · R 키로 다시 시작</p>
+    </main>
+</body>
+</html>

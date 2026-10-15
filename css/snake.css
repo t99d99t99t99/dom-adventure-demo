@@ -1,0 +1,57 @@
+/* 스네이크 게임 보드와 점수, 안내 문구에만 적용하는 스타일입니다. */
+.game {
+    width: min(100% - 32px, 480px);
+    padding: 22px;
+    border: 2px solid #777;
+    background: #101010;
+    box-shadow: 6px 6px 0 #333, 0 0 28px #ffffff20;
+    text-align: center;
+}
+
+.game-header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin: 0 0 12px;
+    letter-spacing: .12em;
+}
+
+.score-line { margin: 0; color: #bbb; font-size: 13px; }
+#score { color: #fff; }
+
+.board-frame {
+    width: 100%;
+    padding: 8px;
+    border: 2px solid #777;
+    background: #080c09;
+    box-shadow: inset 0 0 0 2px #333, 0 0 14px #ffffff1c;
+    transition: transform 180ms ease, filter 180ms ease;
+}
+
+#game-board {
+    display: block;
+    width: 100%;
+    height: auto;
+    image-rendering: pixelated;
+    background: #101010;
+}
+
+.help, .game-over, .error-message {
+    min-height: 1.4em;
+    margin: 14px 0 0;
+    color: #bbb;
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+.error-message { color: #fff; }
+
+.board-frame.is-distorted {
+    transform: translate(2px, -1px) skewX(.35deg);
+    filter: contrast(1.18) brightness(.82);
+}
+
+.glitch-screen .game {
+    border-color: #62efff;
+    box-shadow: 6px 6px 0 #ff3cb8, 0 0 32px #00e5ff50;
+}
