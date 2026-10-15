@@ -1,8 +1,7 @@
-/* 타이틀 화면과 게임 화면이 함께 사용하는 레트로 오락실 스타일입니다. */
 :root {
     color-scheme: dark;
     font-family: "Courier New", monospace;
-    background: #090d12;
+    background: #383d45;
     color: #e5e5e5;
     font-synthesis: none;
 }
@@ -16,18 +15,80 @@ body {
     display: grid;
     place-items: center;
     overflow-x: hidden;
+    position: relative;
+    isolation: isolate;
+    background: transparent;
+}
+
+#barrier {
+    position: fixed;
+    z-index: 1;
+    inset: 0;
+    display: block;
+    width: 100vw;
+    height: 100vh;
     background-color: #090d12;
     background-image: linear-gradient(#111923 1px, transparent 1px), linear-gradient(90deg, #111923 1px, transparent 1px);
     background-size: 24px 24px;
 }
 
+#barrier-dust-canvas {
+    position: fixed;
+    z-index: 1;
+    inset: 0;
+    display: block;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+}
+
 .title-card {
+    position: relative;
+    z-index: 2;
     width: min(100% - 32px, 560px);
     padding: 32px 28px;
     border: 2px solid #777;
     background: #101010;
     box-shadow: 6px 6px 0 #333, 0 0 28px #ffffff20;
     text-align: center;
+}
+
+.ending-card {
+    position: relative;
+    z-index: 2;
+    width: min(100% - 32px, 680px);
+    padding: clamp(42px, 10vw, 88px) 24px;
+    border: 2px solid #7f8b98;
+    background: #10151b;
+    box-shadow: 8px 8px 0 #27313b, 0 0 36px #0008;
+    text-align: center;
+}
+
+.ending-card h1 {
+    margin: 0;
+    color: #f1f5f8;
+    font-size: clamp(28px, 7vw, 54px);
+    line-height: 1.15;
+    letter-spacing: .06em;
+    text-shadow: 4px 4px 0 #465563;
+}
+
+.ending-card p {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    margin: 34px 0 0;
+    padding: 11px 16px;
+    border-top: 1px solid #53616e;
+    color: #c7d2dc;
+    font-size: clamp(15px, 3vw, 20px);
+    letter-spacing: .12em;
+    line-height: 1.5;
+}
+
+.ending-dots {
+    color: #8797a5;
+    letter-spacing: .2em;
 }
 
 h1 {

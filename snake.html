@@ -10,6 +10,7 @@
     <script src="js/snake.js" defer></script>
 </head>
 <body>
+    <canvas id="barrier" aria-hidden="true"></canvas>
     <main class="game" aria-labelledby="game-title">
         <header class="game-header">
             <h1 id="game-title">S N A K E</h1>
@@ -21,7 +22,7 @@
         </div>
 
         <p class="help" id="game-help">방향키 또는 WASD로 이동 · 먹이를 먹고 오래 버티세요</p>
-        <p class="error-message" id="error-message" role="alert" hidden>오류가 발생했습니다. F12를 눌러 자세한 정보를 확인하십시오</p>
+        <p class="error-message" id="error-message" role="alert" hidden>오류가 발생했습니다. F12를 누르고 "콘솔" 탭으로 이동하여 자세한 정보를 확인하십시오</p>
         <p class="game-over" id="game-over" hidden>GAME OVER · R 키로 다시 시작</p>
     </main>
 </body>

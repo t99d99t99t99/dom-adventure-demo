@@ -196,6 +196,14 @@ function startWhiteNoise() {
 }
 
 function printGlitchToConsole() {
+    if (Math.random() < 0.01) {
+        const reportLink = document.createElement("a");
+        reportLink.href = new URL("./report.html", window.location.href).href;
+        reportLink.textContent = "이 오류에 대해 더 자세히 알아보기...";
+        console.error("DOM이 오염되었습니다.", reportLink);
+        return;
+    }
+
     const values = Math.random() < 0.35 ? GLITCH_EXCEPTIONS : GLITCH_VALUES;
     const value = values[Math.floor(Math.random() * values.length)];
     console.error(value);

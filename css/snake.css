@@ -1,5 +1,7 @@
 /* 스네이크 게임 보드와 점수, 안내 문구에만 적용하는 스타일입니다. */
 .game {
+    position: relative;
+    z-index: 2;
     width: min(100% - 32px, 480px);
     padding: 22px;
     border: 2px solid #777;
